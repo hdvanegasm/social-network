@@ -6,6 +6,17 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    torii: {
+      sessionServiceName: 'session'
+    },
+    firebase: {
+      apiKey: "AIzaSyC1uHAAekH3uNPkju6qQ2ccd_gOYzY8I1o",
+      authDomain: "hallchat-5d78f.firebaseapp.com",
+      databaseURL: "https://hallchat-5d78f.firebaseio.com",
+      projectId: "hallchat-5d78f",
+      storageBucket: "hallchat-5d78f.appspot.com",
+      messagingSenderId: "395290537454"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
