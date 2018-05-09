@@ -1,0 +1,9 @@
+<div class='all-users'>
+  <ul>
+    {{#each model as |user|}}
+      <li>{{#link-to 'session.user.view-user' session.currentUser.uid user}}{{user.email}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+</div>
+
+{{outlet}}

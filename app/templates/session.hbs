@@ -1,0 +1,4 @@
+<button type='button' name='logout' {{action 'logout'}}>Logout</button>
+{{#link-to 'session.user.create-publication' session.currentUser.uid}}Create publication{{/link-to}}
+{{#link-to 'session.user.users' session.currentUser.uid}}Publications{{/link-to}}
+{{outlet}}

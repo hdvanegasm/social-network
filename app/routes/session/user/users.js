@@ -5,5 +5,8 @@ export default Route.extend({
   session: service(),
   beforeModel() {
     return this.get('session').fetch().catch(function() {});
+  },
+  model() {
+    return this.get('store').findAll('user');
   }
 });

@@ -4,14 +4,18 @@ import { inject as service } from '@ember/service'
 export default Controller.extend({
   session: service(),
   actions: {
-    login(provider) {
+    login() {
       this.get('session').open('firebase', {
         provider: 'password',
-        email: this.get('username'),
-        password: this.get('username')
-       }).then(function(data) {
-        this.transitionToRoute('session.user.users', data.currentUser);
-      }).catch(function(error) {
+        email: this.get('email'),
+        password: this.get('password')
+      }).then((data) => {
+         this.set('email', '');
+         this.set('password', '');
+         console.log(data);
+         this.transitionToRoute('session.user.users', data.uid);
+      }).catch((error) => {
+        console.error(error);
         window.alert(error.message);
       });
     }

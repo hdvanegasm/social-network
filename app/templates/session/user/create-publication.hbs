@@ -1,0 +1,6 @@
+<div class='create-publication'>
+  {{input type='text' name='publicationText' value=text}}
+  <button type='button' name='cretePublication' {{action 'createPublication' session.currentUser.uid}}>Create publication</button>
+</div>
+
+{{outlet}}
