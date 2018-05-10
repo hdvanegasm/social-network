@@ -1,7 +1,18 @@
-
 <ul>
-  {{#each model as |publication|}}
-    <li>Publication: {{publication.text}}</li>
+  {{#each model.publications as |publication|}}
+    <li>
+      <p>Publication: {{publication.text}}</p>
+      <p>Likes: {{publication.likes}} <button type='button' name='like' {{action 'like' publication}}>Like</button></p>
+      <div class="comments">
+        Comments:
+        <ul>
+          {{#each publication.comments as |comment|}}
+            <li>({{comment.author.email}}) {{comment.text}}</li>
+          {{/each}}
+        </ul>
+        {{#link-to 'session.user.view-user.comment' session.currentUser.uid model.id publication}}Comment{{/link-to}}
+      </div>
+    </li>
   {{/each}}
 </ul>
 

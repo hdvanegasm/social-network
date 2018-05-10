@@ -12,10 +12,8 @@ export default Controller.extend({
       }).then((data) => {
          this.set('email', '');
          this.set('password', '');
-         console.log(data);
          this.transitionToRoute('session.user.users', data.uid);
       }).catch((error) => {
-        console.error(error);
         window.alert(error.message);
       });
     }

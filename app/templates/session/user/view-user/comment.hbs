@@ -1,0 +1,4 @@
+{{input type='text' name='commentText' value=commentText}}
+<button type='button' name='comment' {{action 'comment' session.currentUser.uid model}}>Comment</button>
+
+{{outlet}}

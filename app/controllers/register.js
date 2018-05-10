@@ -20,7 +20,6 @@ export default Controller.extend({
         window.alert('Registration successful');
         this.transitionToRoute('session.user.users', data.uid);
       }).catch(function(error) {
-        console.error(error);
         window.alert(error.message);
       });
     }

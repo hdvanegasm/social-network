@@ -12,7 +12,9 @@ Router.map(function() {
   this.route('session', function() {
     this.route('user', { path: ':id' }, function() {
       this.route('users');
-      this.route('view-user', { path: ':user_id'});
+      this.route('view-user', { path: ':user_id'}, function() {
+        this.route('comment', { path: ':publication_id' });
+      });
       this.route('create-publication');
     });
   });

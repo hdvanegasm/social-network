@@ -1,5 +1,4 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   actions: {
@@ -9,11 +8,12 @@ export default Controller.extend({
         likes: 0
       });
 
-      let user = this.get('store').findRecord('user', uid).then((user) => {
+      this.get('store').findRecord('user', uid).then((user) => {
         user.get('publications').pushObject(newPublication);
         newPublication.save().then(() => {
-          user.save().then(function() {
-            window.alert('Bien')
+          user.save().then(() => {
+            this.set('text', '');
+            window.alert('Publication created');
           });
         })
       });
